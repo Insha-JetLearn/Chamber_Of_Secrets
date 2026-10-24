@@ -1,0 +1,8 @@
+{
+  "name": "Chamber of Secrets AI Journal",
+  "description": "An enchanted, mysterious Harry Potter-inspired diary that listens and pens back in magical golden ink using Google Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

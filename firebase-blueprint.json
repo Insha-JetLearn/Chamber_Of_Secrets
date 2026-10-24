@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "JournalEntry": {
+      "title": "JournalEntry",
+      "description": "A secret journal entry and the enchanted diary's response.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The UID of the user who penned this entry"
+        },
+        "entryText": {
+          "type": "string",
+          "maxLength": 10000,
+          "description": "The user's secret journal entry text"
+        },
+        "aiResponse": {
+          "type": "string",
+          "maxLength": 10000,
+          "description": "The enchanted diary's atmospheric response"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Server creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Server update timestamp"
+        }
+      },
+      "required": ["userId", "entryText", "aiResponse", "createdAt", "updatedAt"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The UID of the user"
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Display name of the journal owner"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Profile creation timestamp"
+        }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "/entries/{entryId}": {
+      "schema": "JournalEntry",
+      "description": "User journal entries and enchanted responses"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profiles"
+    }
+  }
+}
